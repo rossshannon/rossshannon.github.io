@@ -3,314 +3,493 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ross Shannon — Software Developer, Dublin</title>
-  <meta name="description" content="Ross Shannon is a software developer based in Dublin, Ireland. Builder of Dublish, yourhtmlsource.com, and ClaudeBurst. CTO &amp; Head of Integrations at &amp;Open.">
-  <meta name="author" content="Ross Shannon">
+  <title>Ross Shannon - Software Developer in Dublin</title>
+  <meta name="description" content="Ross Shannon is a software developer in Dublin, Ireland building projects including Dublish, ClaudeBurst, yourhtmlsource.com, and rossshannon.com.">
+  <meta name="theme-color" content="#f5efe4">
   <link rel="canonical" href="https://rossshannon.github.io/">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ross Shannon — Software Developer, Dublin">
-  <meta property="og:description" content="Software developer based in Dublin, Ireland. Builder of Dublish, yourhtmlsource.com, and ClaudeBurst. CTO &amp; Head of Integrations at &amp;Open.">
   <meta property="og:type" content="website">
+  <meta property="og:title" content="Ross Shannon - Software Developer in Dublin">
+  <meta property="og:description" content="Ross Shannon is a software developer in Dublin, Ireland building Dublish, ClaudeBurst, yourhtmlsource.com, and rossshannon.com.">
   <meta property="og:url" content="https://rossshannon.github.io/">
-  <meta property="og:locale" content="en_IE">
-
-  <!-- Twitter Card -->
+  <meta property="og:site_name" content="Ross Shannon">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@rossshannon">
-  <meta name="twitter:title" content="Ross Shannon — Software Developer, Dublin">
-  <meta name="twitter:description" content="Software developer based in Dublin, Ireland. Builder of Dublish, yourhtmlsource.com, and ClaudeBurst.">
-
-  <!-- Fonts -->
+  <meta name="twitter:title" content="Ross Shannon - Software Developer in Dublin">
+  <meta name="twitter:description" content="Ross Shannon is a software developer in Dublin, Ireland building Dublish, ClaudeBurst, yourhtmlsource.com, and rossshannon.com.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
+    :root {
+      --paper: #f6f1e8;
+      --paper-2: #f2eadf;
+      --surface: rgba(255, 252, 247, 0.86);
+      --surface-strong: #fffaf3;
+      --ink: #2a2a2a;
+      --muted: #6f665c;
+      --soft: #8e7f67;
+      --line: rgba(154, 135, 104, 0.28);
+      --line-strong: rgba(154, 135, 104, 0.48);
+      --gold: #aa956e;
+      --gold-deep: #8f7956;
+      --shadow: 0 24px 80px rgba(71, 54, 29, 0.12);
+      --radius: 26px;
+      --radius-sm: 18px;
+      --content: 1120px;
+    }
+
+    * {
       box-sizing: border-box;
     }
 
-    :root {
-      --cream: #faf8f5;
-      --text: #2a2a2a;
-      --text-light: #5a5a5a;
-      --gold: #b8a88a;
-      --gold-dark: #9b8b6e;
-      --border: #e8e4de;
-      --font-heading: 'Playfair Display', Georgia, serif;
-      --font-body: 'Inter', -apple-system, sans-serif;
-      --font-accent: 'Cormorant Garamond', Georgia, serif;
-    }
-
     html {
-      font-size: 18px;
       scroll-behavior: smooth;
     }
 
     body {
-      font-family: var(--font-body);
-      font-weight: 300;
-      color: var(--text);
-      background-color: var(--cream);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), transparent 42%),
+        radial-gradient(circle at 85% 10%, rgba(214, 197, 164, 0.22), transparent 28%),
+        radial-gradient(circle at 20% 90%, rgba(192, 171, 136, 0.14), transparent 30%),
+        linear-gradient(180deg, #f8f3ea 0%, #f3ecdf 48%, #eee6d7 100%);
     }
 
-    .container {
-      max-width: 720px;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(117, 100, 74, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(117, 100, 74, 0.03) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mix-blend-mode: multiply;
+      opacity: 0.48;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+    }
+
+    a:hover {
+      color: var(--gold-deep);
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--gold-deep);
+      outline-offset: 4px;
+      border-radius: 6px;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: var(--content);
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 28px 20px 34px;
     }
 
-    /* Header */
-    header {
-      padding: 5rem 0 3rem;
-      text-align: center;
+    .frame {
+      position: relative;
+      background: rgba(255, 251, 245, 0.68);
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 8px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(12px);
     }
 
-    header h1 {
-      font-family: var(--font-heading);
-      font-weight: 400;
-      font-size: 2.8rem;
-      letter-spacing: 0.02em;
-      color: var(--text);
-      margin-bottom: 0.5rem;
+    .frame::before,
+    .frame::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(154, 135, 104, 0.1);
+      border-radius: calc(var(--radius) - 4px);
+      pointer-events: none;
     }
 
-    header .subtitle {
-      font-family: var(--font-accent);
-      font-size: 1.15rem;
-      font-weight: 400;
-      color: var(--gold-dark);
-      letter-spacing: 0.08em;
-      font-style: italic;
+    .frame::after {
+      inset: 24px;
+      border-style: dashed;
+      opacity: 0.4;
     }
 
-    .divider {
-      width: 60px;
+    .hero {
+      position: relative;
+      padding: 38px 34px 26px;
+      display: grid;
+      gap: 22px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 34px;
+      right: 34px;
+      bottom: 0;
       height: 1px;
-      background: var(--gold);
-      margin: 2.5rem auto;
+      background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
     }
 
-    /* Sections */
-    section {
-      padding: 2rem 0;
-    }
-
-    section h2 {
-      font-family: var(--font-accent);
-      font-weight: 500;
-      font-size: 0.85rem;
+    .eyebrow {
+      margin: 0;
+      font-size: 0.74rem;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--gold-dark);
-      margin-bottom: 1.8rem;
+      color: var(--soft);
+      font-weight: 600;
     }
 
-    /* Projects */
-    .project {
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border);
+    .masthead {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 18px;
     }
 
-    .project:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .project h3 {
-      font-family: var(--font-heading);
-      font-weight: 400;
-      font-size: 1.35rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .project h3 a {
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px solid var(--border);
-      transition: border-color 0.2s ease;
-    }
-
-    .project h3 a:hover {
-      border-color: var(--gold-dark);
-    }
-
-    .project .year {
-      font-family: var(--font-accent);
-      font-size: 0.9rem;
-      color: var(--gold);
-      font-style: italic;
-      margin-bottom: 0.4rem;
-    }
-
-    .project p {
-      color: var(--text-light);
-      font-size: 0.92rem;
-      line-height: 1.65;
-    }
-
-    /* Work */
-    .role {
-      margin-bottom: 1.5rem;
-    }
-
-    .role h3 {
-      font-family: var(--font-heading);
-      font-weight: 400;
-      font-size: 1.2rem;
-    }
-
-    .role h3 a {
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px solid var(--border);
-      transition: border-color 0.2s ease;
-    }
-
-    .role h3 a:hover {
-      border-color: var(--gold-dark);
-    }
-
-    .role .position {
-      font-family: var(--font-accent);
-      font-size: 0.95rem;
-      color: var(--gold-dark);
-      font-style: italic;
-    }
-
-    /* Social / Elsewhere */
-    .elsewhere {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .elsewhere a {
-      font-family: var(--font-body);
-      font-weight: 400;
-      font-size: 0.88rem;
-      color: var(--text-light);
-      text-decoration: none;
-      letter-spacing: 0.03em;
-      border-bottom: 1px solid transparent;
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
-
-    .elsewhere a:hover {
-      color: var(--text);
-      border-bottom-color: var(--gold);
-    }
-
-    /* Footer */
-    footer {
-      padding: 4rem 0 3rem;
-      text-align: center;
-    }
-
-    footer .footer-text {
-      font-family: var(--font-accent);
-      font-size: 0.85rem;
-      color: var(--gold);
+    .monogram {
+      width: 78px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1.5px solid rgba(143, 121, 86, 0.58);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(246, 238, 227, 0.88));
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      font-weight: 600;
       letter-spacing: 0.1em;
+      color: var(--gold-deep);
+      box-shadow: inset 0 0 0 5px rgba(187, 169, 137, 0.12);
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      html {
-        font-size: 16px;
+    h1 {
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .lede {
+      max-width: 72ch;
+      margin: 0;
+      font-size: clamp(1rem, 1.8vw, 1.08rem);
+      color: #453f37;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.7fr);
+      gap: 22px;
+      padding: 26px 34px 34px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 22px;
+      align-content: start;
+    }
+
+    .card {
+      position: relative;
+      padding: 24px 24px 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(250, 244, 235, 0.94));
+      box-shadow: 0 12px 30px rgba(103, 79, 47, 0.06);
+    }
+
+    .card h2 {
+      margin: 0 0 16px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.7rem;
+      line-height: 1;
+      letter-spacing: 0.01em;
+    }
+
+    .card .label {
+      margin: 0 0 10px;
+      font-size: 0.72rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--soft);
+      font-weight: 700;
+    }
+
+    .project-list,
+    .social-list,
+    .fact-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 16px;
+    }
+
+    .project {
+      padding-top: 4px;
+    }
+
+    .project + .project {
+      border-top: 1px solid rgba(154, 135, 104, 0.14);
+      padding-top: 16px;
+    }
+
+    .project a {
+      display: inline-flex;
+      gap: 8px;
+      align-items: baseline;
+      font-weight: 700;
+      text-decoration-color: rgba(170, 149, 110, 0.55);
+    }
+
+    .project a::after {
+      content: "↗";
+      font-size: 0.9em;
+      color: var(--gold);
+    }
+
+    .project p,
+    .fact p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .fact {
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(154, 135, 104, 0.16);
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    .fact strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+    }
+
+    .social-list {
+      gap: 10px;
+    }
+
+    .social-list a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(154, 135, 104, 0.16);
+      background: rgba(255, 255, 255, 0.58);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .social-list a span {
+      color: var(--muted);
+      font-weight: 500;
+      margin-left: 14px;
+    }
+
+    .social-list a:hover {
+      border-color: rgba(143, 121, 86, 0.36);
+      background: rgba(255, 255, 255, 0.76);
+    }
+
+    .fine-print {
+      padding: 0 34px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .fine-print::before {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(154, 135, 104, 0.22), transparent);
+      order: 1;
+    }
+
+    .fine-print p {
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .sigil {
+      color: var(--gold-deep);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 920px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 12px;
       }
 
-      header {
-        padding: 3.5rem 0 2rem;
+      .hero,
+      .content {
+        padding-left: 18px;
+        padding-right: 18px;
       }
 
-      header h1 {
-        font-size: 2.2rem;
+      .hero {
+        padding-top: 28px;
       }
 
-      .container {
-        padding: 0 1.5rem;
+      .masthead {
+        grid-template-columns: 1fr;
       }
 
-      .elsewhere {
+      .monogram {
+        width: 66px;
+      }
+
+      .card {
+        padding: 20px 18px 18px;
+      }
+
+      .fine-print {
+        padding: 0 18px 22px;
         flex-direction: column;
-        gap: 0.8rem;
+        align-items: flex-start;
+      }
+
+      .fine-print::before {
+        width: 100%;
+        flex: none;
+      }
+
+      .fine-print p {
+        white-space: normal;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 <body>
+  <div class="page">
+    <div class="frame">
+      <header class="hero">
+        <p class="eyebrow">rossshannon.github.io</p>
+        <div class="masthead">
+          <div class="monogram" aria-hidden="true">RS</div>
+          <div>
+            <h1>Ross Shannon</h1>
+            <p class="subtitle">Software Developer - Dublin, Ireland</p>
+          </div>
+        </div>
+        <p class="lede">
+          I build calm, useful products with an editorial eye, a preference for durable engineering,
+          and enough restraint to let the work speak for itself.
+        </p>
+      </header>
 
-  <div class="container">
+      <main class="content">
+        <div class="stack">
+          <section class="card" id="projects" aria-labelledby="projects-title">
+            <p class="label">Selected Work</p>
+            <h2 id="projects-title">Projects</h2>
+            <ul class="project-list">
+              <li class="project">
+                <a href="https://dublish.ie" target="_blank" rel="noopener noreferrer">Dublish - property data for Dublin</a>
+                <p>Dublin property intelligence platform for people who want clearer signals around the market.</p>
+              </li>
+              <li class="project">
+                <a href="https://yourhtmlsource.com" target="_blank" rel="noopener noreferrer">yourhtmlsource.com</a>
+                <p>Web development education, archived and extended from an original site established in 1999.</p>
+              </li>
+              <li class="project">
+                <a href="https://github.com/rossshannon/ClaudeBurst" target="_blank" rel="noopener noreferrer">ClaudeBurst</a>
+                <p>A macOS menubar app that notifies you when your Claude Code session allowance refreshes.</p>
+              </li>
+              <li class="project">
+                <a href="https://rossshannon.com" target="_blank" rel="noopener noreferrer">rossshannon.com</a>
+                <p>Personal site for writing, experiments, and the long tail of Ross's work online.</p>
+              </li>
+            </ul>
+          </section>
 
-    <header>
-      <h1>Ross Shannon</h1>
-      <p class="subtitle">Software Developer · Dublin, Ireland</p>
-    </header>
+          <section class="card" id="work" aria-labelledby="work-title">
+            <p class="label">Current Role</p>
+            <h2 id="work-title">Work</h2>
+            <ul class="fact-list">
+              <li class="fact">
+                <strong>&amp;Open</strong>
+                <p>Head of Engineering at <a href="https://andopen.co" target="_blank" rel="noopener noreferrer">&amp;Open</a>.</p>
+              </li>
+            </ul>
+          </section>
+        </div>
 
-    <div class="divider"></div>
+        <aside class="stack">
+          <section class="card" aria-labelledby="contact-title">
+            <p class="label">Find Me</p>
+            <h2 id="contact-title">Social</h2>
+            <ul class="social-list">
+              <li><a href="https://x.com/rossshannon" target="_blank" rel="noopener noreferrer">X <span>@rossshannon</span></a></li>
+              <li><a href="https://ie.linkedin.com/in/rossshannon" target="_blank" rel="noopener noreferrer">LinkedIn <span>rossshannon</span></a></li>
+              <li><a href="https://github.com/rossshannon" target="_blank" rel="noopener noreferrer">GitHub <span>rossshannon</span></a></li>
+            </ul>
+          </section>
 
-    <section aria-label="Projects">
-      <h2>Projects</h2>
+          <section class="card" aria-labelledby="notes-title">
+            <p class="label">Note</p>
+            <h2 id="notes-title">Editorial, not promotional</h2>
+            <p class="lede" style="font-size: 0.98rem; margin-top: 0;">
+              This page keeps the focus on the work: a few useful links, no filler, and a warm visual tone
+              that leaves room for the projects to do the talking.
+            </p>
+          </section>
+        </aside>
+      </main>
 
-      <div class="project">
-        <h3><a href="https://dublish.ie">Dublish</a></h3>
-        <p>A <a href="https://dublish.ie">Dublin property intelligence</a> platform — see what houses actually sold for, compare neighbourhoods, and track price trends across every street in the city.</p>
-      </div>
-
-      <div class="project">
-        <h3><a href="https://yourhtmlsource.com">yourhtmlsource.com</a></h3>
-        <div class="year">Est. 1999</div>
-        <p>One of the web's original HTML and web development tutorial sites. A learning resource that has helped millions of people build their first websites.</p>
-      </div>
-
-      <div class="project">
-        <h3><a href="https://github.com/rossshannon/ClaudeBurst">ClaudeBurst</a></h3>
-        <p>A macOS menubar utility that announces when your next Claude Code session allowance begins. Open source, built with Swift.</p>
-      </div>
-
-      <div class="project">
-        <h3><a href="https://rossshannon.com">rossshannon.com</a></h3>
-        <p>Personal site — writing, projects, and the occasional deep dive.</p>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section aria-label="Work">
-      <h2>Work</h2>
-
-      <div class="role">
-        <h3><a href="https://andopen.co">&amp;Open</a></h3>
-        <p class="position">CTO &amp; Head of Integrations</p>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section aria-label="Elsewhere">
-      <h2>Elsewhere</h2>
-
-      <nav class="elsewhere">
-        <a href="https://github.com/rossshannon">GitHub</a>
-        <a href="https://x.com/rossshannon">Twitter</a>
-        <a href="https://linkedin.com/in/rossshannon">LinkedIn</a>
-      </nav>
-    </section>
-
-    <footer>
-      <div class="divider"></div>
-      <p class="footer-text">© 2026 · 🦞</p>
-    </footer>
-
+      <footer class="fine-print">
+        <p><span class="sigil">Ross Shannon</span> 2026</p>
+        <p>Made for GitHub Pages.</p>
+      </footer>
+    </div>
   </div>
-
 </body>
 </html>
